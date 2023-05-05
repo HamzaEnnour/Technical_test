@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Add Label</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name" />
+  </mat-form-field>
+  &nbsp;
+  <mat-form-field>
+    <mat-label>Color</mat-label>
+    <input matInput [ngxMatColorPicker]="picker" [(ngModel)]="selectedColor" />
+    <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+    <ngx-mat-color-picker #picker [color]="color"></ngx-mat-color-picker>
+  </mat-form-field>
+  <br />
+  <p style="color: red">{{ message }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSubmit()" cdkFocusInitial>Add</button>
+</div>

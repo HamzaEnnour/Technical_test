@@ -1,0 +1,40 @@
+Labels List :
+<mat-chip-listbox aria-label="label selection" [(ngModel)]="selectedLabel">
+  <mat-chip-option
+    *ngFor="let label of labels"
+    [style.background-color]="label.color"
+    [value]="label"
+    >{{ label.name }}</mat-chip-option
+  >
+</mat-chip-listbox>
+<br />
+<br />
+<button mat-stroked-button color="warn" (click)="addLabelDialog()">
+  add Label
+</button>
+<br />
+<br />
+<div *ngIf="selectedLabel == null">Please select a label</div>
+<div *ngIf="selectedLabel != null">
+  You have been selected the label :
+  {{ selectedLabel ? selectedLabel.name : "" }}
+  <br />
+  And now try to select a word or a sentence
+</div>
+
+<br />
+<br />
+<div
+  [innerHTML]="longText"
+  (window:mousedown)="onTextMouseDown($event)"
+  (window:mouseup)="onTextMouseUp($event)"
+>
+  {{ longText }}
+</div>
+
+<br />
+<br />
+
+<button mat-raised-button color="primary" (click)="export()">
+  Export Json
+</button>

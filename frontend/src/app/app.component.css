@@ -1,0 +1,11 @@
+.highlighted-sentence {
+  display: inline-block !important;
+  height: 25px !important;
+  border-radius: 5px !important;
+  padding-top: 3px !important;
+  background-color: var(--mat-orange-400) !important;
+}
+
+.my-dialog-class {
+  background-color: white;
+}
